@@ -27,7 +27,7 @@ async def save_group(bot, message):
         if message.chat.id in temp.BANNED_CHATS:
             # Inspired from a boat of a banana tree
             buttons = [[
-                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('Support', url=f'https://t.me/Prime_Admin_Support_ProBot')
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply(
@@ -42,10 +42,10 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                    InlineKeyboardButton('🔥 𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓`𝐒 🔥', url='https://t.me/Prime_Botz'),
+                    InlineKeyboardButton('✨ 𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄𝐒 ✨', url=CHNL_LNK)
                  ],[
-                    InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ✨", url="t.me/Prime_Nayem")
+                    InlineKeyboardButton("〄 𝗔𝗗𝗠𝗜𝗡 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 〄", url="https://t.me/Prime_Bots_Support_RoBot")
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
