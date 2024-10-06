@@ -65,10 +65,10 @@ async def save_group(bot, message):
                                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
+                                                                           InlineKeyboardButton('⌬ Aʟʟ Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ', url=f'https://t.me/{SUPPORT_CHAT}'),
                                                                            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
                                                                         ],[
-                                                                           InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ😊", url="t.me/Prime_Nayem")
+                                                                           InlineKeyboardButton("🔍 𝗧𝗵𝗲 𝗣𝗿𝗶𝗺𝗲 𝗠𝗼𝘃𝗶𝗲𝘀 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗚𝗿𝗼𝘂𝗽 🔎', url=GRP_LNK)
                                                                          ]]
                                                  ),
                                                  parse_mode=enums.ParseMode.HTML
