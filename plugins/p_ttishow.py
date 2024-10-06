@@ -91,15 +91,15 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('Support Group',url="https://t.me/Prime_Movies4U"),
-            InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ😉", url="t.me/Prime_Nayem")
+            InlineKeyboardButton('🔥 𝙋𝙍𝙄𝙈𝙀 𝘽𝙊𝙏𝙨 🔥',url="https://t.me/Prime_Botz"),
+            InlineKeyboardButton("❤️‍🔥 Bᴏᴛ Oᴡɴᴇʀ ❤️‍🔥", url="t.me/Prime_Nayem")
         ],[
-            InlineKeyboardButton('Use Me Here', url=f'https://t.me/{SUPPORT_CHAT}')
+            InlineKeyboardButton('〄 𝗔𝗗𝗠𝗜𝗡 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 〄', url=f'https://t.me/Prime_Bots_Support_RoBot')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat,
-            text='<b>Hello Friends, \nMy admin has told me to leave from group, so i go! If you wanna add me again contact my Support Group or My Owner</b>',
+            text='<b>Hello Friends, \nMy admin has told me to leave from group, so i go! If you wanna add me again contact Admin Support or My Owner</b>',
             reply_markup=reply_markup,
         )
 
@@ -133,7 +133,7 @@ async def disable_chat(bot, message):
     await message.reply('Chat Successfully Disabled')
     try:
         buttons = [[
-            InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+            InlineKeyboardButton('Support', url=f'https://t.me/Prime_Bots_Support_RoBot')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
