@@ -84,7 +84,7 @@ async def start(client, message):
             buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAJ_9GcBHjuwkFd321YlOG4WOtdDCLv7AAIhFAACTiwJVPNa_9D21RH6NgQ") 
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -715,7 +715,7 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-    @Client.on_message(filters.command('delete') & filters.user(ADMINS))
+@Client.on_message(filters.command('delete') & filters.user(ADMINS))
 async def delete(bot, message):
     reply = await bot.ask(message.from_user.id, "Now Send Me Media Which You Want to delete")
     if reply.media:
@@ -727,8 +727,7 @@ async def delete(bot, message):
     for file_type in ("document", "video", "audio"):
         media = getattr(reply, file_type, None)
         if media is not None:
-            break     
-    
+            break
     else:
         await msg.edit('This is not supported file format')
         return
