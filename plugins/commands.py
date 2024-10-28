@@ -468,39 +468,49 @@ async def start(client, message):
             return await message.reply('<b><i>No such file exist.</b></i>')
         filesarr = []
         for file in files:
-            file_id = file.file_id
-            files_ = await get_file_details(file_id)
-            files1 = files_[0]
-            title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
-            size=get_size(files1.file_size)
-            f_caption=files1.caption
-            if CUSTOM_FILE_CAPTION:
-                try:
-                    f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
-                except Exception as e:
-    logger.exception(e)
-    f_caption = f_caption
+    file_id = file.file_id
+    files_ = await get_file_details(file_id)
+    files1 = files_[0]
+    title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
+    size = get_size(files1.file_size)
+    f_caption = files1.caption
 
-if f_caption is None:
-    f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
+    if CUSTOM_FILE_CAPTION:
+        try:
+            f_caption = CUSTOM_FILE_CAPTION.format(
+                file_name='' if title is None else title,
+                file_size='' if size is None else size,
+                file_caption='' if f_caption is None else f_caption
+            )
+        except Exception as e:
+            logger.exception(e)
+            f_caption = f_caption  # Default caption if there's an exception
 
-if not await db.has_premium_access(message.from_user.id):
-    if not await check_verification(client, message.from_user.id) and VERIFY == True:
-        btn = [
-            [InlineKeyboardButton("🔥 Verify 🔥", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))],
-            [InlineKeyboardButton("✅ How To Open Link & Verify ✅", url=VERIFY_TUTORIAL)],
-            [InlineKeyboardButton("⭐ 𝗥𝗲𝗺𝗼𝘃𝗲 𝗔𝗱𝘀 𝗚𝗲𝘁 𝗗𝗶𝗿𝗲𝗰𝘁 𝗙𝗶𝗹𝗲 ⭐", callback_data="buy_premium")]
-        ]
-        
-        sent_message = await message.reply_text(
-            text="<b>You are not verified !\nKindly verify to continue !\n\nJust Verify One Time And Get \nMovies For next 24hr without any \nverification (Ad)\n\nশুধু একবার verify করুন এবং পরবর্তী !\n24 ঘন্টার জন্য কোনো Ad ছাড়াই সিনেমা পান \n\n🔻verify 🔥 এ ক্লিক করুন verified করতে \n\n🔻(How to Open Link & verify✅ এ‌ ক্লিক করে কিভাবে verify করবেন তা দেখে নিন)\n\nClick The Button Below To Check How to Open Link & Verify✅ See verified tutorial\n\n 🔻যদি এভাবে না করে ডাইরেক্ট ফাইল চান তাহলে ক্লিক করুন Remove Ads ⭐ 👇</b>",
-            protect_content=True,
-            reply_markup=InlineKeyboardMarkup(btn)
-        )
-        
-        await asyncio.sleep(20)  # ২০ সেকেন্ড অপেক্ষা করুন
-        await sent_message.delete()  # মেসেজটি ডিলিট করুন
-        return
+    if f_caption is None:
+        f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
+
+    # Checking for premium access and verification
+    if not await db.has_premium_access(message.from_user.id):
+        if not await check_verification(client, message.from_user.id) and VERIFY == True:
+            btn = [
+                [
+                    InlineKeyboardButton("🔥 Verify 🔥", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                ],
+                [
+                    InlineKeyboardButton("✅ How To Open Link & Verify ✅", url=VERIFY_TUTORIAL)
+                ],
+                [
+                    InlineKeyboardButton("⭐ 𝗥𝗲𝗺𝗼𝘃𝗲 𝗔𝗱𝘀 𝗚𝗲𝘁 𝗗𝗶𝗿𝗲𝗰𝘁 𝗙𝗶𝗹𝗲 ⭐", callback_data="buy_premium")
+                ]
+            ]
+            sent_message = await message.reply_text(
+                text="<b>You are not verified!\nKindly verify to continue!\n\nJust Verify One Time And Get \nMovies For next 24hr without any \nverification (Ad)\n\nশুধু একবার verify করুন এবং পরবর্তী !\n24 ঘন্টার জন্য কোনো Ad ছাড়াই সিনেমা পান \n\n🔻verify 🔥 এ ক্লিক করুন verified করতে \n\n🔻(How to Open Link & verify✅ এ‌ ক্লিক করে কিভাবে verify করবেন তা দেখে নিন)\n\nClick The Button Below To Check How to Open Link & Verify✅ See verified tutorial\n\n 🔻যদি এভাবে না করে ডাইরেক্ট ফাইল চান তাহলে ক্লিক করুন Remove Ads ⭐ 👇</b>",
+                protect_content=True,
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            await asyncio.sleep(20)  # Wait for 20 seconds before deleting
+            await sent_message.delete()  # Delete the message after 20 seconds
+            return
             if STREAM_MODE == True:
                 button = [[
                     InlineKeyboardButton('⌬ Aʟʟ Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ', url=f'https://t.me/{SUPPORT_CHAT}'),
