@@ -496,6 +496,8 @@ async def start(client, message):
                         protect_content=True,
                         reply_markup=InlineKeyboardMarkup(btn)
                     )
+                    await asyncio.sleep(20)  # Wait for 20 seconds before deleting
+                    await sent_message.delete() 
                     return
             if STREAM_MODE == True:
                 button = [[
@@ -573,6 +575,8 @@ async def start(client, message):
                         protect_content=True,
                         reply_markup=InlineKeyboardMarkup(btn)
                     )
+                    await asyncio.sleep(20)  # Wait for 20 seconds before deleting
+                    await sent_message.delete() 
                     return
             if STREAM_MODE == True:
                 button = [[
@@ -647,6 +651,8 @@ async def start(client, message):
                 protect_content=True,
                 reply_markup=InlineKeyboardMarkup(btn)
             )
+            await asyncio.sleep(20)  # Wait for 20 seconds before deleting
+            await sent_message.delete() 
             return
     if STREAM_MODE == True:
         button = [[
