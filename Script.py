@@ -12,7 +12,7 @@ class script(object):
 ɪᴛ ɪs ᴇᴀsʏ ᴛᴏ ᴜsᴇ ᴍᴇ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴍᴀᴋᴇ ᴍᴇ ᴀs ᴀᴅᴍɪɴ
 
 
-‣ My ᴅᴇᴠᴇʟᴏᴘᴇʀ/Owner ❤️‍🔥➠ <a href=https://t.me/Prime_Nayem>𝗠𝗥.𝗣𝗥𝗜𝗠𝗘</a></b>"""
+<blockquote>‣ 🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href=https://t.me/Prime_Botz>𝗣𝗥𝗜𝗠𝗘 𝗕𝗢𝗧𝗭</a></blockquote></b>"""
 
     CLONE_START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{}>{}</a></blockquote>
     
