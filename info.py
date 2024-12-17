@@ -73,7 +73,9 @@ PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', 'pri_Nay1') # Public Ch
 
 # Links
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+OG3sftDEbZ9kMzFl')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Prime_Movies4U')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Prime_Botz')
+MAINCHANL_LNK = environ.get('MAINCHANL_LNK', 'https://t.me/Prime_Movies4U')
+PSUP_LNK = environ.get('PSUP_LNK', 'https://t.me/Prime_Botz_Support')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/Prime_Movie_Watch_Dawnload/75')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '+NO6RGoj16Fw2Njc9') # Support Chat Link Without https:// or @
 
