@@ -18,7 +18,7 @@ join_db = JoinReqs
 
 @Client.on_chat_join_request((filters.group | filters.channel))
 async def auto_approve(client, message: ChatJoinRequest):
-    if message.chat.id == AUTH_CHANNELS and join_db().isActive():
+    if message.chat.id == AUTH_CHANNEL and join_db().isActive():
         if REQUEST_TO_JOIN_MODE == False:
             return 
         ap_user_id = message.from_user.id
@@ -362,10 +362,11 @@ async def auto_approve(client, message: ChatJoinRequest):
     if AUTO_APPROVE_MODE == True:
         if not await db.is_user_exist(message.from_user.id):
             await db.add_user(message.from_user.id, message.from_user.first_name)
-        if message.chat.id == AUTH_CHANNELS:
+        if message.chat.id == AUTH_CHANNEL:
             return 
         chat = message.chat 
         user = message.from_user  
         await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
         text = f"<b>ʜᴇʟʟᴏ {message.from_user.mention} 👋,\n\nʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ {message.chat.title} ɪs ᴀᴘᴘʀᴏᴠᴇᴅ.যে লিংকে ক্লিক করেছিলেন ওখানে আবার ক্লিক করুন তাহলে চ্যানেলে প্রবেশ করে যাবেন\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ - @Prime_Movies4U</b>"
         await client.send_message(chat_id=user.id, text=text)
+            
