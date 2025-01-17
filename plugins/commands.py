@@ -78,20 +78,19 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
             ]]
-            
-        if CLONE_MODE == True:
+     if CLONE_MODE == True:
     buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
-reply_markup = InlineKeyboardMarkup(buttons)
-m = await message.reply_sticker("CAACAgUAAxkBAAJ_9GcBHjuwkFd321YlOG4WOtdDCLv7AAIhFAACTiwJVPNa_9D21RH6NgQ")
-await asyncio.sleep(1)
-await m.delete()
-await message.reply_photo(
-    photo=random.choice(PICS),
-    caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-    reply_markup=reply_markup,
-    parse_mode=enums.ParseMode.HTML
-)
-return
+    reply_markup = InlineKeyboardMarkup(buttons)
+    m = await message.reply_sticker("CAACAgUAAxkBAAJ_9GcBHjuwkFd321YlOG4WOtdDCLv7AAIhFAACTiwJVPNa_9D21RH6NgQ")
+    await asyncio.sleep(1)
+    await m.delete()
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )
+    return
 
 if AUTH_CHANNELS and not await is_subscribed(client, message):
     try:
@@ -141,7 +140,8 @@ if AUTH_CHANNELS and not await is_subscribed(client, message):
         reply_markup=InlineKeyboardMarkup(btn),
         parse_mode=enums.ParseMode.MARKDOWN
     )
-    return
+    return       
+                    
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         if PREMIUM_AND_REFERAL_MODE == True:
             buttons = [[
