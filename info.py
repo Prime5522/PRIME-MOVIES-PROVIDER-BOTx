@@ -40,11 +40,8 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 # if REQUEST_TO_JOIN_MODE is true then force subscribe work like request to join fsub, else if false then work like normal fsub.
 REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', True)) # Set True Or False
 TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', True)) # Set True Or False (This try again button is only for request to join fsub not for normal fsub)
-
-# একাধিক চ্যানেল আইডি গ্রহণের জন্য পরিবর্তন
-auth_channels = environ.get('AUTH_CHANNEL', '-1002245813234, -1002043502363')  # চ্যানেল আইডি কমা দিয়ে আলাদা করে দিন
-AUTH_CHANNELS = [int(ch.strip()) for ch in auth_channels.split(',') if ch.strip() and id_pattern.search(ch.strip())]
-
+auth_channel = environ.get('AUTH_CHANNEL', '-1002245813234') # give your force subscribe channel id here else leave it blank
+AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 reqst_channel = environ.get('REQST_CHANNEL_ID', '-1004599074149')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002214422860')
