@@ -237,7 +237,7 @@ PRIME MOVIES SEARCH BOT"""
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     CAPTION = """📂 <b>Filename:</b> <a href='https://t.me/Prime_Movies4U'>{file_name}</a>
-sɪᴢᴇ ⚙️: {file_size}
+
 •────•────✦✗✦───•────•
 📌 <b>ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ :➠</b> <a href='https://t.me/Prime_Movies4U/143'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ✨</a>
 🎬 <b>ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ :➠</b> <a href='https://t.me/Prime_Movies4U/153'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ♨️</a>
