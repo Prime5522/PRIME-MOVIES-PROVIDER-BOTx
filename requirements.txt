@@ -31,8 +31,7 @@ umongo==3.0.1
 PyLeaves==1.0.2
 youtube-search-python==1.4.6
 opencv-python-headless==4.7.0.68 
-googletrans==3.1.0a0 
-telegraph==2.2.0 
+googletrans==3.1.0a0  
 python-dotenv==0.21.1 
 gTTS==2.3.1 
 speedtest==0.0.1 
