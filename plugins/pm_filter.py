@@ -1917,7 +1917,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await xo.delete()
 
             await log_msg.reply_text(
-                text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
+                text=f"•• iᴘᴀᴘᴋᴏʀɴ ᴘʀiᴍᴇʙᴏᴛ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=download),  # we download Link
@@ -1965,7 +1965,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
                 InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
             ],[
-                InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
+                InlineKeyboardButton('✧ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 ✧', url='https://t.me/Prime_Nayem')
             ]]
         else:
             buttons = [[
@@ -2084,8 +2084,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-            InlineKeyboardButton('OWNER', url="http://t.me/Prime_Nayem")
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=PSUP_LNK),
+            InlineKeyboardButton('Sorce Code', url="http://t.me/Prime_Bots_Support_RoBot")
         ],[
             InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
