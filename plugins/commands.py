@@ -61,7 +61,7 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)       
             ],[
-                InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
+                InlineKeyboardButton('✧ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 ✧', url='https://t.me/Prime_Nayem')
             ]]
             
         else:
@@ -151,7 +151,7 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
             ],[
-                InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
+                InlineKeyboardButton('✧ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 ✧', url='https://t.me/Prime_Nayem')
             ]]
             
         else:
@@ -211,7 +211,7 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
                 ],[
-                    InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
+                    InlineKeyboardButton('✧ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 ✧', url='https://t.me/Prime_Nayem')
                 ]]
             else:
                 buttons = [[
@@ -225,13 +225,13 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
                 ],[
-                    InlineKeyboardButton('💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫', url='https://t.me/Prime_Nayem')
+                    InlineKeyboardButton('✧ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 ✧', url='https://t.me/Prime_Nayem')
                 ]]
             if CLONE_MODE == True:
                 buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
             reply_markup = InlineKeyboardMarkup(buttons)
-            m=await message.reply_sticker("CAACAgUAAxkBAAJ_9GcBHjuwkFd321YlOG4WOtdDCLv7AAIhFAACTiwJVPNa_9D21RH6NgQ") 
-            await asyncio.sleep(1)
+            m=await message.reply_sticker("CAACAgUAAxkBAAEBIhtnmlUCxTzDp5vJUAmkN4tHRbwz3gACfRkAAkp6kVSa0JMRKmF49R4E") 
+            await asyncio.sleep(2)
             await m.delete()
             await message.reply_photo(
                 photo=random.choice(PICS),
