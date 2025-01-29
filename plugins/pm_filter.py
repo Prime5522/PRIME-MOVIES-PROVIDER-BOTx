@@ -1956,9 +1956,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('✪ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ ✪', url=PSUP_LNK),
-                InlineKeyboardButton('⌬ Mᴏᴠɪᴇ Gʀᴏᴜᴘ ⌬', url=GRP_LNK)
+                InlineKeyboardButton('〄 Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ 〄', url=MAINCHANL_LNK)
             ],[
-                InlineKeyboardButton('〄 Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ 〄', url=MAINCHANL_LNK),
+                InlineKeyboardButton('◇ ʜᴇʟᴘ ◇', callback_data='help'),
                 InlineKeyboardButton('⍟ Aʙᴏᴜᴛ ⍟', callback_data='about')
             ],[
                 InlineKeyboardButton('💳 ⭐ 𝗥𝗲𝗺𝗼𝘃𝗲 𝗔𝗱𝘀 𝗚𝗲𝘁 𝗗𝗶𝗿𝗲𝗰𝘁 𝗙𝗶𝗹𝗲 ⭐ 💳', callback_data='buy_premium')
@@ -2055,7 +2055,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
              InlineKeyboardButton('sᴛʀᴇᴀᴍ/ᴅᴏᴡɴʟᴏᴀᴅ', callback_data='s_txt') 
          ], [ 
              InlineKeyboardButton('ꜰɪʟᴇ ꜱᴛᴏʀᴇ', callback_data='store_file'),   
-             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele') 
+             InlineKeyboardButton('ꜱᴏɴɢ', callback_data='song') 
          ], [ 
              InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ', callback_data='coct'), 
              InlineKeyboardButton('ꜰɪʟᴛᴇʀꜱ', callback_data='filters')
@@ -2063,11 +2063,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
              InlineKeyboardButton('ʏᴛ-ᴅʟ', callback_data='ytdl'), 
              InlineKeyboardButton('ꜱʜᴀʀᴇ ᴛᴇxᴛ', callback_data='share')
          ], [
-             InlineKeyboardButton('ꜱᴏɴɢ', callback_data='song'),
-             InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data='shortlink_info')
-         ], [
              InlineKeyboardButton('ꜱᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
              InlineKeyboardButton('ᴊ-ꜱᴏɴ', callback_data='json')
+         ], [
+             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'), 
          ], [             
              InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴 🏠', callback_data='start')
         ]]
