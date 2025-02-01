@@ -1,13 +1,12 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
-
 import re
-from os import environ
-from Script import script 
+import os  # Import the os module
+from os import environ  # Import environ from os
+from Script import script
 
+# Define the pattern for matching channel IDs
 id_pattern = re.compile(r'^.\d+$')
+
+# Function to check if a value is enabled
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
         return True
@@ -24,7 +23,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
-PICS = (environ.get('PICS', 'https://envs.sh/ars.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://envs.sh/ars.jpg')).split()  # SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/b69af2db776e4e85d21ec.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://t.me/Welcome_Masage/17")
 SPELL_IMG = environ.get("SPELL_IMG", "https://envs.sh/Nx0.jpg")
@@ -38,12 +37,11 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
 # auth_channel means force subscribe channel.
 # if REQUEST_TO_JOIN_MODE is true then force subscribe work like request to join fsub, else if false then work like normal fsub.
-REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', True)) # Set True Or False
-TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', True)) # Set True Or False (This try again button is only for request to join fsub not for normal fsub)
-
+REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', True))  # Set True Or False
+TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', True))  # Set True Or False (This try again button is only for request to join fsub not for normal fsub)
 
 # Get the AUTH_CHANNEL environment variable and split it into a list
-auth_channels = os.environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363').split()
+auth_channels = environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363').split()
 
 # Convert valid channel IDs to integers, leave invalid ones as strings
 AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in auth_channels]
