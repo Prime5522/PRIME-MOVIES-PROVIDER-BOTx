@@ -42,23 +42,13 @@ REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', True)) # Set Tru
 TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', True)) # Set True Or False (This try again button is only for request to join fsub not for normal fsub)
 
 
-auth_channels = environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363')
+# Get the AUTH_CHANNEL environment variable and split it into a list
+auth_channels = os.environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363').split()
 
-# যদি AUTH_CHANNEL ফাঁকা না থাকে, তাহলে একাধিক চ্যানেল সাপোর্ট করা হবে
-if auth_channels:
-    AUTH_CHANNEL = []
-    for ch in auth_channels.split():
-        # যাচাই করুন যে এটি একটি সঠিক চ্যানেল আইডি কিনা
-        if id_pattern.search(ch):
-            try:
-                AUTH_CHANNEL.append(int(ch))  # সঠিক আইডি হলে সেটি int তে রূপান্তরিত হবে
-            except ValueError:
-                AUTH_CHANNEL.append(ch)  # যদি আইডি int এ রূপান্তর না হয়, তবে এটি স্ট্রিং হিসেবে রাখা হবে
-        else:
-            AUTH_CHANNEL.append(ch)  # যদি এটি সঠিক প্যাটার্ন না হয়, তবে সেটি স্ট্রিং হিসেবে রাখা হবে
-else:
-    AUTH_CHANNEL = None  # যদি কোনো চ্যানেল আইডি না থাকে, তবে None থাকবে
+# Convert valid channel IDs to integers, leave invalid ones as strings
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in auth_channels]
 
+print(AUTH_CHANNEL)
 #auth_channel = environ.get('AUTH_CHANNEL', '-1002393090851') # give your force subscribe channel id here else leave it blank
 #AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 
