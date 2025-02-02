@@ -1,9 +1,7 @@
 from pyrogram import Client, filters
 import requests
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
-# Config থেকে API Key & Channel ID ইমপোর্ট করুন
-from config import OMDB_API_KEY, TARGET_CHANNEL_ID
+from info import OMDB_API_KEY, TARGET_CHANNEL_ID  # info.py থেকে ডাটা ইমপোর্ট করুন
 
 @app.on_message(filters.channel & filters.document)
 def handle_new_file(client, message):
@@ -33,4 +31,4 @@ def handle_new_file(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Download Now", url=direct_link)]]
             )
-  )
+        )
