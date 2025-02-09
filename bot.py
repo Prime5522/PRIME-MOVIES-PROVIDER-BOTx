@@ -27,7 +27,6 @@ from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
 from datetime import date, datetime 
-from handlers import auto_index
 from aiohttp import web
 from plugins import web_server
 from plugins.clone import restart_bots
